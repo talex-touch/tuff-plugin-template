@@ -14,16 +14,16 @@
 
 ## Features
 
-- ⚡️ [tsup](https://tsup.egoist.dev/) for bundling.
+- ⚡️ Based on vitesse.
 - 🦾 TypeScript, of course.
 - ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest).
-- ☁️ Deploy on npm, zero-config.
+- ☁️ Deploy on pnpm, zero-config.
 
 <br>
 
 ## Try it now!
 
-> Requires Node >=18
+> Requires Node >=22
 
 ### GitHub Template
 
