@@ -30,6 +30,7 @@ catalogs:
   dev:
     '@antfu/eslint-config': ^4.19.0
     '@iconify-json/carbon': ^1.2.13
+    '@talex-touch/unplugin-export-plugin': ^1.2.3
     '@vue-macros/volar': ^3.1.1
     '@vue/test-utils': ^2.4.6
     cypress: ^14.5.4
