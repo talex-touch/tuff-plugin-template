@@ -1,9 +1,15 @@
-const { $util, console, TuffItemBuilder } = globalThis
+/**
+ * @typedef {import('@talex-touch/utils').IPluginUtils} TuffUtil
+ * @typedef {import('@talex-touch/utils').IPluginFeature} TuffFeature
+ * @typedef {import('@talex-touch/utils').IPluginLifecycle} PluginLifecycle
+ */
+
+const { $util, logger, TuffItemBuilder } = globalThis
 
 /**
- * Mocks a translation.
- * @param {string} text The text to translate.
- * @returns {Promise<{text: string, from: string, to: string}>}
+ * Mocks a translation operation.
+ * @param {string} text - The text to translate
+ * @returns {Promise<{text: string, from: string, to: string}>} Returns the translation result object
  */
 async function mockTranslate(text) {
   const isChinese = /[\u4E00-\u9FFF]/.test(text)
@@ -18,9 +24,10 @@ async function mockTranslate(text) {
 }
 
 /**
- * @param {string} featureId
- * @param {string} query
- * @param {AbortSignal} signal
+ * Handles translation functionality.
+ * @param {string} featureId - The feature ID
+ * @param {string} query - The query string
+ * @param {AbortSignal} signal - The abort signal
  * @returns {Promise<void>}
  */
 async function handleTranslation(featureId, query, signal) {
@@ -40,7 +47,7 @@ async function handleTranslation(featureId, query, signal) {
     $util.pushItems([item])
   }
   catch (error) {
-    console.error('Translation failed:', error)
+    logger.error('Translation failed:', error)
     const errorItem = new TuffItemBuilder('error-item')
       .setSource('plugin', 'plugin-features')
       .setTitle('Translation Failed')
@@ -52,12 +59,14 @@ async function handleTranslation(featureId, query, signal) {
   }
 }
 
+/** @type {PluginLifecycle} */
 const pluginLifecycle = {
   /**
-   * @param {string} featureId
-   * @param {string} query
-   * @param {any} feature
-   * @param {AbortSignal} signal
+   * Called when a feature is triggered.
+   * @param {string} featureId - The feature ID
+   * @param {string} query - The query string
+   * @param {TuffFeature} feature - The feature configuration
+   * @param {AbortSignal} signal - The abort signal
    */
   async onFeatureTriggered(featureId, query, feature, signal) {
     if (featureId === 'touch-translate' && query && query.trim()) {
