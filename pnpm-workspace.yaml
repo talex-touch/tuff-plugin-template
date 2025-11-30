@@ -25,6 +25,9 @@ catalogs:
     vite-plugin-vue-layouts: ^0.11.0
     vite-ssg: ^26.1.1
     vite-ssg-sitemap: ^0.8.1
+  conflicts_dev_h1_2_8:
+    '@talex-touch/unplugin-export-plugin': ^1.2.8
+
   dev:
     '@antfu/eslint-config': ^4.19.0
     '@iconify-json/carbon': ^1.2.14
@@ -56,7 +59,6 @@ catalogs:
   types:
     '@types/markdown-it-link-attributes': ^3.0.5
     '@types/nprogress': ^0.2.3
-
 onlyBuiltDependencies:
   - cypress
   - electron
