@@ -25,6 +25,10 @@ catalogs:
     vite-plugin-vue-layouts: ^0.11.0
     vite-ssg: ^26.1.1
     vite-ssg-sitemap: ^0.8.1
+  conflicts_conflicts_conflicts_dev_h1_2_8_h1_2_10_h1_2_11:
+    '@talex-touch/unplugin-export-plugin': ^1.2.11
+  conflicts_conflicts_conflicts_dev_h1_2_8_h1_2_10_h1_2_14:
+    '@talex-touch/unplugin-export-plugin': ^1.2.14
   conflicts_conflicts_dev_h1_2_8_h1_2_10:
     '@talex-touch/unplugin-export-plugin': ^1.2.10
   conflicts_dev_h1_2_8:
